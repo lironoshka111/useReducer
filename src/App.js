@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { Router, Link } from "@reach/router";
-
+import Counter from "./Counter";
 import { ShopProvider } from "./ShopContext";
 import Products from "./Products";
 import Cart from "./Cart";
+import {AppContextProvider} from "./AppContex";
 
 const App = () => {
   return (
-    <ShopProvider>
+    <AppContextProvider>
       <Wrapper>
         <TitleWrapper>
           <h1>useReducer Hook</h1>
@@ -18,13 +19,15 @@ const App = () => {
         <LinksWrapper>
           <Link to="/">Home</Link>
           <Link to="/cart">Cart</Link>
+          <Link to="/counter">counter</Link>
         </LinksWrapper>
         <Router>
           <Products path="/" />
+          <Counter path="/counter"/>
           <Cart path="/cart" />
         </Router>
       </Wrapper>
-    </ShopProvider>
+    </AppContextProvider>
   );
 };
 
