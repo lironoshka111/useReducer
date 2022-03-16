@@ -4,6 +4,7 @@ import { shopData } from "./ShopData";
 import ProductCard from "./ProductCard";
 
 const Products = () => {
+  console.log('compnenet');
   return (
     <>
       <Title>Welcome to DC Clothing Shop</Title>
